@@ -1,0 +1,53 @@
+/* Global CSS (e.g., index.css or App.css) */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Remove any explicit height: 100vh or min-height: 100vh from here */
+    /* If you absolutely need min-height: 100vh, apply it to a wrapper div, not directly to body */
+    /* overflow-x: hidden; /* Horizontal scroll ko rokein */
+}
+
+/* Make sure your main content wrapper takes up available space */
+#root, #app { /* If your React app mounts to a div with id="root" or "app" */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* This is where min-height: 100vh should ideally be placed */
+}
+
+main { /* Or whatever element wraps your page content */
+    flex-grow: 1; /* Allow the main content to take up all available space, pushing footer down */
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: Arial, sans-serif;
+}
+
+.page-main {
+  margin-top: 80px; /* Must match header height */
+  padding: 20px;
+}
+
+
+.common-btn {
+  background-color: #8a4baf ;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #5f357e;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,89 @@
+.testimonials {
+  padding: 80px 0;
+  text-align: center;
+  background: #0f172a; /* Deep dark slate */
+}
+
+.testimonials h2 {
+  font-size: 32px;
+  color: #a78bfa; /* Soft violet */
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-shadow: 0 2px 5px rgba(167, 139, 250, 0.3);
+}
+
+.testmonials-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(14px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.2);
+  padding: 25px;
+  border-radius: 14px;
+  width: 300px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 10px 30px rgba(167, 139, 250, 0.4); /* violet glow on hover */
+}
+
+.student-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #7c3aed; /* Deep purple border */
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.4); /* glow */
+}
+
+.message {
+  font-size: 16px;
+  color: #e2e8f0; /* Light text */
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-style: italic;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f472b6; /* Soft pink (coral) */
+  margin-bottom: 5px;
+}
+
+.position {
+  font-size: 14px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 85%;
+    text-align: center;
+  }
+}

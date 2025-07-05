@@ -1,0 +1,99 @@
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: rgba(30, 41, 59, 0.8); /* Dark dashboard background */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar toggle for mobile */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background-color: #0a192f;
+  color: white;
+  z-index: 1200;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .dashboard-main {
+    margin-left: 0 !important;
+    padding: 20px;
+  }
+}
+
+/* Sidebar spacing */
+.dashboard-main {
+  flex: 1;
+  padding: 40px;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+  color: #fff;
+}
+
+/* 🧊 Updated form card with white background */
+.edit-form-section {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff; /* White background */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  color: #000; /* Dark text for white bg */
+}
+
+/* Form styles */
+.edit-form h2 {
+  color: #0a192f;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+.edit-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #222;
+}
+
+.edit-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  margin-bottom: 18px;
+  background-color: #fefefe;
+  color: #000;
+}
+
+.edit-form input[readonly] {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.edit-form button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #00ffe5, #00c6ff);
+  border: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-form button:hover {
+  background: linear-gradient(to right, #00c6ff, #00ffe5);
+}

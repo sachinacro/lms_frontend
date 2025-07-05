@@ -1,0 +1,123 @@
+/* Sidebar Container */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 70px; /* fix for Home hiding issue */
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(12px);
+  color: #e2e8f0;
+  box-shadow: 2px 0 20px rgba(124, 58, 237, 0.1);
+}
+
+
+/* Sidebar Items */
+.sidebar ul {
+  list-style: none;
+  padding: 0 12px;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 14px;
+  transition: background 0.3s, transform 0.2s;
+  border-radius: 10px;
+}
+
+.sidebar ul li:hover {
+  background-color: rgba(124, 58, 237, 0.15);
+  transform: translateX(5px);
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #cbd5e1;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.sidebar ul li a .icon {
+  font-size: 1.3rem;
+  color: #a78bfa;
+  min-width: 24px;
+}
+
+.sidebar ul li a span {
+  margin-left: 15px;
+  white-space: nowrap;
+}
+
+/* Responsive sidebar behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar:not(.open) ul li a span {
+    display: none;
+  }
+}
+
+/* Dashboard Container */
+.dashboard-admin {
+  display: flex;
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  padding: 30px;
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .blur-bg {
+    filter: blur(2px);
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+/* Toggle Button */
+.sidebar-toggle-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1100;
+    background: #7c3aed;
+    color: white;
+    padding: 10px 14px;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,72 @@
+/* login.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+.login-floating-label {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.login-floating-label input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  background: #fff;
+  outline: none;
+  color: #333;
+}
+
+.login-floating-label label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 0 5px;
+  color: #aaa;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.login-floating-label input:focus + label,
+.login-floating-label input:not(:placeholder-shown):valid + label {
+  top: -10px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+.login-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 50%;
+  max-width: 280px;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.login-checkbox-wrapper {
+  margin: 12px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #555;
+}

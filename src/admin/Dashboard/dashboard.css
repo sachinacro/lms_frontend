@@ -1,0 +1,121 @@
+.admin-dashboard {
+  padding: 50px 20px;
+  background-color: #0f172a; /* deep dark slate like hero */
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.admin-dashboard h2 {
+  font-size: 2.5rem;
+  color: #a78bfa;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.stat-box {
+  background: rgba(30, 41, 59, 0.6); /* glassy dark slate */
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 30px;
+  width: 250px;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.stat-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
+}
+
+.stat-box h3 {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #a78bfa;
+}
+
+/* Detail View Section */
+.detail-view {
+  background: rgba(15, 23, 42, 0.6);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: auto;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+}
+
+.detail-view h3 {
+  font-size: 1.6rem;
+  color: #c084fc;
+  margin-bottom: 20px;
+}
+
+.detail-view ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.detail-view ul li {
+  padding: 10px;
+  background-color: rgba(30, 41, 59, 0.5);
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #e2e8f0;
+  transition: background 0.2s;
+}
+
+.detail-view ul li:hover {
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+.common-btn {
+  margin-bottom: 20px;
+  background-color: #7c3aed;
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.common-btn:hover {
+  background-color: #5b21b6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stat-box {
+    width: 90%;
+  }
+
+  .admin-dashboard h2 {
+    font-size: 2rem;
+  }
+
+  .detail-view {
+    padding: 20px;
+  }
+}

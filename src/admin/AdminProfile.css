@@ -1,0 +1,109 @@
+/* Background & Base Text */
+body {
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  color: #e2e8f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  background: rgba(30, 41, 59, 0.4); /* dark translucent */
+  border: 1px solid rgba(124, 58, 237, 0.2); /* violet border */
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  color: #e0e7ff;
+  max-width: 500px;
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.card h2 {
+  color: #c084fc;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+.list-group-item {
+  background-color: transparent;
+  color: #f1f5f9;
+  border: none;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.list-group-item strong {
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.5rem;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 1.5rem auto 0;
+}
+
+.btn-primary:hover {
+  background-color: #5b21b6;
+}
+
+.btn-success {
+  background-color: #16a34a;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-secondary {
+  background-color: #64748b;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #475569;
+}
+
+/* Modal Styles */
+.modal-content {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  color: #f8fafc;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  border-color: rgba(148, 163, 184, 0.1);
+}
+
+/* Form Controls */
+.form-label {
+  color: #cbd5e1;
+}
+
+.form-control {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(100, 116, 139, 0.4);
+  color: #f1f5f9;
+  border-radius: 8px;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #7c3aed;
+  background-color: rgba(15, 23, 42, 0.6);
+  box-shadow: 0 0 0 0.2rem rgba(124, 58, 237, 0.25);
+}

@@ -1,0 +1,76 @@
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f8fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Main Content */
+.progress-main {
+  flex: 1;
+  padding: 40px;
+  margin-left: 280px; /* Match Sidebar width */
+  padding-top: 80px;
+  background-color: #f9f9f9;
+}
+
+/* Heading */
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Progress List */
+.progress-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Course Item */
+.progress-item {
+  margin-bottom: 30px;
+}
+
+/* Title */
+.course-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 18px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #28a745;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Info Text */
+.progress-info {
+  font-size: 0.95rem;
+  margin-top: 5px;
+  color: #444;
+}
+
+/* Empty State */
+.empty-msg {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .progress-main {
+    margin-left: 0;
+    padding: 20px;
+    padding-top: 80px;
+  }
+}

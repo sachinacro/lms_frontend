@@ -1,0 +1,63 @@
+.admin-quiz-page {
+  padding: 2rem 1rem;
+  background-color: #0b1120;
+  min-height: 100vh;
+  color: #e2e8f0;
+}
+
+.admin-quiz-page h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #80d8ff;
+  font-size: 1.8rem;
+}
+
+.loading,
+.no-results {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-top: 20px;
+}
+
+.lecture-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lecture-item {
+  background-color: #1c2233;
+  color: #e2e8f0;
+  padding: 1rem 1.5rem;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.lecture-item:hover {
+  background-color: #28324a;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .lecture-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .arrow {
+    font-size: 1rem;
+  }
+}

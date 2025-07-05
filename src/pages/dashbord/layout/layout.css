@@ -1,0 +1,40 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #0b1928;
+  z-index: 800; /* below header */
+  transition: transform 0.3s ease-in-out;
+}
+.main-content {
+  flex: 1;
+  transition: margin-left 0.3s ease;
+  padding: 30px;
+}
+
+/* Desktop view (sidebar hamesha dikhta hai) */
+@media (min-width: 1025px) {
+  .main-content {
+    margin-left: 280px;
+  }
+}
+
+/* Mobile view (sidebar slide karega) */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Mobile Hide */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  padding: 10px !important;
+  font-size: 14px;
+}
+
+.MuiTextField-root {
+  margin-bottom: 10px !important;
+}
+
+.MuiTypography-root {
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .MuiPaper-root {
+    padding: 24px;
+  }
+}
+
+
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.register-container {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-img-container {
+  width: 50%;
+}
+
+.register-img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.register-form-paper {
+  width: 50%;
+  padding: 40px 30px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 8px 25px rgba(25, 25, 25, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .register-img-container,
+  .register-form-paper {
+    width: 100%;
+  }
+}

@@ -1,0 +1,121 @@
+.completed-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar wrapper with fixed width */
+.sidebar-wrapper {
+  width: 280px;
+}
+
+/* Sidebar Toggle for Mobile */
+.sidebar-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background-color: #0a192f;
+  color: white;
+  z-index: 1200;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Main Content */
+.completed-content {
+  flex: 1;
+  padding: 30px;
+  padding-top: 80px;
+}
+
+/* Heading */
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Grid */
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Card */
+.course-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.lecture-info {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.download-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #218838;
+}
+
+.empty-msg {
+  font-size: 16px;
+  color: #888;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar-wrapper {
+    display: ${/* Hidden in small screens unless toggled */''};
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+  }
+
+  .completed-container {
+    flex-direction: column;
+  }
+
+  .completed-content {
+    margin-left: 0;
+    padding: 20px;
+    padding-top: 70px;
+  }
+
+  .course-grid {
+    flex-direction: column;
+  }
+}

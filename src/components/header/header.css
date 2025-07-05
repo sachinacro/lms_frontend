@@ -1,0 +1,130 @@
+/* Reset */ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+.glass-header {
+  backdrop-filter: blur(12px);
+  background: rgba(11, 24, 40, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 191, 255, 0.1);
+}
+
+/* Container */
+.container.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo a {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(to right, #00bfff, #00ffb8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.logo a:hover {
+  transform: scale(1.05);
+}
+
+/* Nav */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #ffffffcc;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, #00bfff, #00ffb8);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffea;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #00ffea;
+  cursor: pointer;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background: rgba(11, 24, 40, 0.95);
+  padding: 20px 30px;
+  z-index: 999;
+}
+
+.mobile-nav a {
+  color: #ffffffcc;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav a:hover {
+  color: #00ffea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+}
+

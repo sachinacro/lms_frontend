@@ -1,0 +1,199 @@
+/* src/components/admin/faq.css */
+
+.faq-container {
+    max-width: 850px; /* Thoda aur चौड़ा karein */
+    margin: 40px auto; /* ऊपर-नीचे और मार्जिन दें ताकि पेज से चिपका न लगे */
+    padding: 50px; /* अंदरूनी स्पेस बढ़ाएं */
+    background: rgba(255, 255, 255, 0.08); /* Background ko thoda aur prominent karein */
+    border-radius: 20px; /* Border radius thoda aur badha dein */
+    backdrop-filter: blur(15px); /* Blur effect thoda aur badha dein */
+    color: #e0e0e0; /* Text color ko thoda lighter karein */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Halka sa shadow add karein for depth */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Halka border bhi add karein */
+}
+
+.faq-heading {
+    font-size: 2.5rem; /* Heading size thoda aur bada karein */
+    margin-bottom: 30px; /* Heading ke niche space badhaein */
+    color: #00ffe5; /* Already good, but can be adjusted */
+    text-align: center; /* Heading ko center mein rakhein */
+    text-shadow: 0 0 10px rgba(0, 255, 229, 0.4); /* Halka text shadow for pop */
+}
+
+.faq-form {
+    display: flex;
+    gap: 15px; /* Input aur button ke beech ka gap badhaein */
+    margin-bottom: 30px; /* Form ke niche space badhaein */
+    align-items: center; /* Vertically align items */
+}
+
+.faq-form input {
+    flex: 1;
+    padding: 15px 20px; /* Padding badhaein */
+    border-radius: 10px; /* Border radius thoda aur badhaein */
+    font-size: 17px; /* Font size thoda badhaein */
+    border: 1px solid #555; /* Halka border add karein */
+    background: #2a2a2a; /* Input background ko dark karein */
+    color: #e0e0e0; /* Input text color ko lighter karein */
+    outline: none; /* Focus outline hatayein */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.faq-form input:focus {
+    border-color: #00ffe5; /* Focus par border color change karein */
+    box-shadow: 0 0 8px rgba(0, 255, 229, 0.6); /* Focus par shadow */
+}
+
+.faq-form button {
+    padding: 15px 25px; /* Padding badhaein */
+    border-radius: 10px; /* Border radius thoda aur badhaein */
+    background: linear-gradient(to right, #00ffe5, #00c6ff);
+    color: #1a1a1a; /* Button text color dark karein */
+    font-weight: 700; /* Font weight badhaein */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    letter-spacing: 0.5px; /* Letter spacing add karein */
+}
+
+.faq-form button:hover {
+    background: linear-gradient(to right, #00c6ff, #00ffe5); /* Hover par gradient reverse karein */
+    box-shadow: 0 6px 15px rgba(0, 198, 255, 0.4); /* Hover par shadow */
+    transform: translateY(-2px); /* Halka sa lift up effect */
+}
+
+.faq-form button:disabled {
+    background: #444; /* Disabled state ke liye grey background */
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+.faq-answer {
+    margin-top: 30px; /* Answer section ke upar space badhaein */
+    background: rgba(255, 255, 255, 0.1); /* Answer background ko thoda aur prominent karein */
+    padding: 25px; /* Padding badhaein */
+    border-radius: 15px; /* Border radius badhaein */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Halka border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for answer box */
+}
+
+.faq-answer h4 {
+    font-size: 1.3rem; /* Answer heading size */
+    margin-bottom: 15px; /* Answer heading ke niche space */
+    color: #00ffc6; /* Answer heading color */
+}
+
+.faq-answer p {
+    font-size: 17px; /* Answer text font size */
+    line-height: 1.6; /* Line height badhaein for better readability */
+    color: #c9c9c9; /* Answer text color */
+}
+
+/* Optional: Add a subtle animation for when the answer appears */
+.faq-answer.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Add some basic body styling for the overall page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern font */
+    background-color: #1a1a2e; /* Thoda dark blueish background */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header/Navbar styling from your image (basic example, adjust as needed) */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.3); /* Slightly transparent dark header */
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00ffe5;
+}
+
+.header-nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.header-nav .nav-links a:hover {
+    color: #00ffe5;
+}
+
+/* Footer styling (basic example, adjust as needed) */
+.footer {
+    background: #11111a; /* Even darker footer */
+    color: #a0a0a0;
+    padding: 40px 50px;
+    margin-top: 50px; /* Footer ko content se alag karein */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px; /* Footer sections ke beech gap */
+}
+
+.footer .footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer .footer-section h3 {
+    color: #00ffe5;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.footer .footer-section p,
+.footer .footer-section ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer .footer-section ul li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-section ul li a:hover {
+    color: #00ffe5;
+}
+
+.footer .social-icons a {
+    color: #a0a0a0;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #00ffe5;
+}

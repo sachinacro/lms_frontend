@@ -1,0 +1,113 @@
+/* === Layout container === */
+.dashboard-container {
+  display: flex;
+  background-color: #f4f6fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Sidebar slide + Content shift === */
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  padding-top: 70px;
+  margin-left: 280px; /* desktop view mein sidebar ke liye default margin */
+  transition: margin-left 0.3s ease;
+  overflow-y: auto;
+}
+.dashboard-main.sidebar-open {
+  margin-left: 0; /* Jab sidebar open ho, content shift hoga */
+}
+
+.dashboard-main.sidebar-open {
+  margin-left: 0; /* Jab sidebar open ho, content shift hoga */
+}
+
+
+/* When sidebar is closed on mobile */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    margin-left: 0;
+  }
+}
+
+/* === Sidebar Toggle Button === */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #0a192f;
+  color: white;
+  z-index: 1400;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* === Stats Layout === */
+.user-stats {
+  margin: 30px 0;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background-color: #ffffff;
+  color: #fefafa;
+  
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: scale(1.02);
+}
+
+.stat-box h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.stat-box p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6c63ff;
+}
+
+.dashboard-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.empty-message {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 12px;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .user-stats {
+    flex-direction: column;
+  }
+
+  .stat-box {
+    width: 100%;
+  }
+
+  .dashboard-courses {
+    flex-direction: column;
+  }
+}
