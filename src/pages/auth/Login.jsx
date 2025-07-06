@@ -14,6 +14,7 @@ import { CourseData } from "../../context/CourseContext";
 import { UserData } from "../../context/UserContext";
 import "./Login.css"; // Ensure you have the styles for the login page
 import loginImg from "../../assets/type10.avif"; // replace with your image path
+import { server } from "../../main";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ const Login = () => {
       const user = result.user;
       const idToken = await user.getIdToken();
 
-      const res = await fetch("http://localhost:5000/api/user/google-login", {
+      const res = await fetch(`${server}/api/user/google-login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: idToken }),
