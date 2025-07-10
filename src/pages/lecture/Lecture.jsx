@@ -340,10 +340,14 @@ useEffect(() => {
                 </button>
               )}
 
-              {show && (
+            {show && (
                 <div className="lecture-form">
                   <h2>Add Lecture</h2>
-                  <form onSubmit={isEditMode ? updateHandler : submitHandler}>
+                  <form
+  onSubmit={isEditMode ? updateHandler : submitHandler}
+  encType="multipart/form-data"
+>
+
                     <label htmlFor="text">Title</label>
                     <input
                       type="text"
