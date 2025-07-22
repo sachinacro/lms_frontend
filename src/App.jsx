@@ -70,9 +70,9 @@ const App = () => {
     [mode]
   );
 
-  const toggleMode = () => {
-    setMode((prev) => (prev === "light" ? "dark" : "light"));
-  };
+  // const toggleMode = () => {
+  //   setMode((prev) => (prev === "light" ? "dark" : "light"));
+  // };
 
   return (
     <ThemeProvider theme={theme}>
