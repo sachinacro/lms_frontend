@@ -87,6 +87,8 @@ const [editingLectureId, setEditingLectureId] = useState(null);
   myForm.append("title", title);
   myForm.append("description", description);
   myForm.append("video", video);  // 👈 Correct field name
+  console.log("🎥 Video File:", video);
+
 
   try {
     const { data } = await axios.post(
@@ -310,20 +312,21 @@ useEffect(() => {
                 <>
                   {lecture.video ? (
                     <>
-                      <video
-                        key={lecture._id}
-                        src={`${server}/${lecture.video}`}
-                        width={"100%"}
-                        controls
-                        controlsList="nodownload noremoteplayback"
-                        disablePictureInPicture
-                        disableRemotePlayback
-                        autoPlay
-                        onEnded={() => {
-                          console.log("📽️ Video Ended");
-                          addProgress(lecture._id);
-                        }}
-                      ></video>
+                     <video
+  key={lecture._id}
+  src={lecture?.video?.url}
+  width={"100%"}
+  controls
+  controlsList="nodownload noremoteplayback"
+  disablePictureInPicture
+  disableRemotePlayback
+  autoPlay
+  onEnded={() => {
+    console.log("📽️ Video Ended");
+    addProgress(lecture._id);
+  }}
+></video>
+
                       <h1>{lecture.title}</h1>
                       <h3>{lecture.description}</h3>
                     </>
@@ -340,7 +343,7 @@ useEffect(() => {
                 </button>
               )}
 
-            {show && (
+              {show && (
                 <div className="lecture-form">
                   <h2>Add Lecture</h2>
                   <form
@@ -379,7 +382,44 @@ useEffect(() => {
               )}
 
 
-             
+              {/* {lectures.length > 0 ? (
+                lectures.map((e, i) => (
+                  <div key={e._id}>
+                    <div
+                      onClick={() => fetchLecture(e._id)}
+                      className={`lecture-number ${
+                        lecture._id === e._id && "active"
+                      }`}
+                    >
+                      {i + 1}. {e.title}{" "}
+                      {progress[0] &&
+                        progress[0].completedLectures.includes(e._id) && (
+                          <span
+                            style={{
+                              background: "red",
+                              padding: "2px",
+                              borderRadius: "6px",
+                              color: "greenyellow",
+                            }}
+                          >
+                            <TiTick />
+                          </span>
+                        )}
+                    </div>
+                    {user && user.role === "admin" && (
+                      <button
+                        className="common-btn"
+                        style={{ background: "red" }}
+                        onClick={() => deleteHandler(e._id)}
+                      >
+                        Delete {e.title}
+                      </button>
+                    )}
+                  </div>
+                ))
+              ) : (
+                <p>No Lectures Yet!</p>
+              )} */}
               {lectures.length > 0 ? (
                 lectures.map((e, i) => (
                   <div key={e._id}>

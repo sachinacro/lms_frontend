@@ -176,3 +176,149 @@ const Login = () => {
 };
 
 export default Login;
+
+// import React, { useState } from "react";
+// import {
+//   Box,
+//   Button,
+//   TextField,
+//   Typography,
+//   Link as MuiLink,
+//   Paper,
+//   Divider,
+// } from "@mui/material";
+// import { Link, useNavigate } from "react-router-dom";
+// import { UserData } from "../../context/UserContext";
+// import { CourseData } from "../../context/CourseContext";
+// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+// import { auth } from "../../firebase";
+
+// const Login = () => {
+//   const navigate = useNavigate();
+//   const { btnLoading, loginUser, setUser, setIsAuth } = UserData();
+//   const { fetchMyCourse } = CourseData();
+
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [googleBtnLoading, setGoogleBtnLoading] = useState(false); // 🔥 Local loading state
+
+//   const submitHandler = async (e) => {
+//     e.preventDefault();
+//     await loginUser(email, password, navigate, fetchMyCourse);
+//   };
+
+//   const handleGoogleLogin = async () => {
+//   setGoogleBtnLoading(true); // Start loading
+//   try {
+//     const provider = new GoogleAuthProvider();
+//     const result = await signInWithPopup(auth, provider);
+//     const user = result.user;
+//     const idToken = await user.getIdToken();
+
+//     const res = await fetch("http://localhost:5000/api/user/google-login", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({ token: idToken }),
+//     });
+
+//     const data = await res.json();
+
+//     if (res.ok) {
+//       localStorage.setItem("token", data.token);
+//       setUser(data.user);
+//       setIsAuth(true);
+//       fetchMyCourse();
+
+//       // 👇 Conditional navigate based on role
+//       if (data.user.role === "admin") {
+//         navigate("/account");
+//       } else {
+//         navigate(`/${data.user._id}/dashboard`);
+//       }
+//     } else {
+//       console.error("Login failed:", data.message);
+//       alert("Login failed: " + data.message);
+//     }
+//   } catch (error) {
+//     console.error("Google login error:", error);
+//     alert("Google login failed");
+//   } finally {
+//     setGoogleBtnLoading(false); // Stop loading
+//   }
+// };
+
+
+//   return (
+//     <Box display="flex" alignItems="center" justifyContent="center" height="80vh">
+//       <Paper elevation={3} sx={{ padding: 4, width: 350, textAlign: "center" }}>
+//         <Typography variant="h5" mb={2} color="primary">
+//           Welcome Back
+//         </Typography>
+
+//         <form onSubmit={submitHandler}>
+//           <TextField
+//             label="Email"
+//             type="email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             fullWidth
+//             required
+//             margin="normal"
+//           />
+//           <TextField
+//             label="Password"
+//             type="password"
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//             fullWidth
+//             required
+//             margin="normal"
+//           />
+//           <Button
+//             variant="contained"
+//             color="primary"
+//             fullWidth
+//             type="submit"
+//             disabled={btnLoading}
+//             sx={{ mt: 2 }}
+//           >
+//             {btnLoading ? "Please Wait..." : "Login"}
+//           </Button>
+//         </form>
+
+//         <Divider sx={{ my: 2 }}>or</Divider>
+
+//         <Button
+//           variant="outlined"
+//           color="secondary"
+//           fullWidth
+//           onClick={handleGoogleLogin}
+//           disabled={googleBtnLoading}
+//           startIcon={
+//             <img
+//               src="https://developers.google.com/identity/images/g-logo.png"
+//               alt="google"
+//               style={{ width: 20, height: 20 }}
+//             />
+//           }
+//         >
+//           {googleBtnLoading ? "Please wait..." : "Sign in with Google"}
+//         </Button>
+
+//         <Typography variant="body2" mt={2}>
+//           Don't have an account?{" "}
+//           <MuiLink component={Link} to="/register">
+//             Register
+//           </MuiLink>
+//         </Typography>
+//         <Typography variant="body2" mt={1}>
+//           <MuiLink component={Link} to="/forgot">
+//             Forgot password?
+//           </MuiLink>
+//         </Typography>
+//       </Paper>
+//     </Box>
+//   );
+// };
+
+// export default Login;

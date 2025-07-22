@@ -37,7 +37,27 @@ const CourseStudy = ({ user }) => {
           <h4>Instructor: {course.createdBy}</h4>
           <h5>Duration: {course.duration} weeks</h5>
 
-        
+          {/* Optional: Progress Bar Placeholder */}
+          {/* <div style={{ width: "100%", maxWidth: "400px", marginTop: "20px" }}>
+            <div
+              style={{
+                backgroundColor: "#334155",
+                height: "12px",
+                borderRadius: "8px",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  height: "100%",
+                  width: "40%",
+                  background: "linear-gradient(90deg, #7c3aed, #8b5cf6)",
+                }}
+              />
+            </div>
+            
+          </div> */}
+
           <Link to={`/lectures/${course._id}`}>Go to Lectures</Link>
         </div>
       ) : (

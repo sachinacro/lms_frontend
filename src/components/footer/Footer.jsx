@@ -24,7 +24,7 @@ const Footer = () => {
             <li><a href="/courses">Courses</a></li>
             <li><a href="/about">About Us</a></li>
             <li><a href="/contact">Contact</a></li>
-            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/admin/faq">FAQ</a></li>
           </ul>
         </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
 
       {/* Bottom Line */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} E-Learn. All rights reserved.</p>
+        <p> {new Date().getFullYear()} E-Learn. All rights reserved.</p>
       </div>
     </footer>
   );

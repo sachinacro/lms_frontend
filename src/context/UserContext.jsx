@@ -11,7 +11,27 @@ export const UserContextProvider = ({ children }) => {
   const [btnLoading, setBtnLoading] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  
+  // async function loginUser(email, password, navigate, fetchMyCourse) {
+  //   setBtnLoading(true);
+  //   try {
+  //     const { data } = await axios.post(`${server}/api/user/login`, {
+  //       email,
+  //       password,
+  //     });
+
+  //     toast.success(data.message);
+  //     localStorage.setItem("token", data.token);
+  //     setUser(data.user);
+  //     setIsAuth(true);
+  //     setBtnLoading(false);
+  //     navigate("/");
+  //     fetchMyCourse();
+  //   } catch (error) {
+  //     setBtnLoading(false);
+  //     setIsAuth(false);
+  //     toast.error(error.response.data.message);
+  //   }
+  // }
  async function loginUser(email, password, navigate, fetchMyCourse) {
   setBtnLoading(true);
 

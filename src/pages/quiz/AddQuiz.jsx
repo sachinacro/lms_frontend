@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { server } from "../../main";
+import "./AddQuiz.css";
 
 const AddQuiz = () => {
   const { id } = useParams(); // lectureId
@@ -93,65 +94,70 @@ const submitQuiz = async () => {
 
   return (
     <div>
-      <h2>Add Quiz</h2>
-      {quiz.map((q, i) => (
-        <div key={i}>
-          <input value={q.question} onChange={(e) => handleQuizChange("question", e.target.value, i)} placeholder="Question" />
-          {q.options.map((opt, j) => (
-            <input key={j} value={opt} onChange={(e) => handleQuizChange("option", e.target.value, i, j)} placeholder={`Option ${j+1}`} />
-          ))}
-          <select value={q.correctAnswer} onChange={(e) => handleQuizChange("correctAnswer", e.target.value, i)}>
-            {[0, 1, 2, 3].map(opt => <option key={opt} value={opt}>Correct Option: {opt + 1}</option>)}
-          </select>
-        </div>
+      <div className="add-quiz-container">
+  <h2>Add Quiz</h2>
+  {quiz.map((q, i) => (
+    <div key={i} className="quiz-form">
+      <input value={q.question} onChange={(e) => handleQuizChange("question", e.target.value, i)} placeholder="Question" />
+      {q.options.map((opt, j) => (
+        <input key={j} value={opt} onChange={(e) => handleQuizChange("option", e.target.value, i, j)} placeholder={`Option ${j+1}`} />
       ))}
-      <button onClick={() => setQuiz([...quiz, { question: "", options: ["", "", "", ""], correctAnswer: 0 }])}>+ Add</button>
-      <button onClick={submitQuiz}>Save Quiz</button>
+      <select value={q.correctAnswer} onChange={(e) => handleQuizChange("correctAnswer", e.target.value, i)}>
+        {[0, 1, 2, 3].map(opt => <option key={opt} value={opt}>Correct Option: {opt + 1}</option>)}
+      </select>
+    </div>
+  ))}
+  <div className="quiz-form">
+    <button onClick={() => setQuiz([...quiz, { question: "", options: ["", "", "", ""], correctAnswer: 0 }])}>+ Add</button>
+    <button onClick={submitQuiz}>Save Quiz</button>
+  </div>
 
-      <h3 style={{ marginTop: "30px" }}>Existing Quiz</h3>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-        {existingQuiz.map((q, index) => (
-          <div key={index} style={{ border: "1px solid #ccc", padding: "15px", borderRadius: "10px", minWidth: "300px" }}>
-            {editingIndex === index ? (
-              <>
-                <input value={q.question} onChange={(e) => {
-                  const copy = [...existingQuiz];
-                  copy[index].question = e.target.value;
-                  setExistingQuiz(copy);
-                }} />
-                {q.options.map((opt, j) => (
-                  <input key={j} value={opt} onChange={(e) => {
-                    const copy = [...existingQuiz];
-                    copy[index].options[j] = e.target.value;
-                    setExistingQuiz(copy);
-                  }} />
-                ))}
-                <select value={q.correctAnswer} onChange={(e) => {
-                  const copy = [...existingQuiz];
-                  copy[index].correctAnswer = Number(e.target.value);
-                  setExistingQuiz(copy);
-                }}>
-                  {[0, 1, 2, 3].map(opt => <option key={opt} value={opt}>Correct Option: {opt + 1}</option>)}
-                </select>
-                <button onClick={() => updateSingleQuiz(index)}>Save</button>
-              </>
-            ) : (
-              <>
-                <strong>{q.question}</strong>
-                <ul style={{ paddingLeft: "20px" }}>
-                  {q.options.map((opt, j) => (
-                    <li key={j} style={{ color: j === q.correctAnswer ? "green" : "black" }}>{opt}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-            <div style={{ marginTop: "10px" }}>
-              <button onClick={() => setEditingIndex(index)}>✏️ Edit</button>
-              <button onClick={() => deleteSingleQuiz(index)} style={{ marginLeft: "10px", color: "red" }}>🗑️ Delete</button>
-            </div>
-          </div>
-        ))}
+  <h3 style={{ marginTop: "30px" }}>Existing Quiz</h3>
+  <div className="quiz-cards">
+    {existingQuiz.map((q, index) => (
+      <div key={index} className="quiz-card">
+        {editingIndex === index ? (
+          <>
+            <input value={q.question} onChange={(e) => {
+              const copy = [...existingQuiz];
+              copy[index].question = e.target.value;
+              setExistingQuiz(copy);
+            }} />
+            {q.options.map((opt, j) => (
+              <input key={j} value={opt} onChange={(e) => {
+                const copy = [...existingQuiz];
+                copy[index].options[j] = e.target.value;
+                setExistingQuiz(copy);
+              }} />
+            ))}
+            <select value={q.correctAnswer} onChange={(e) => {
+              const copy = [...existingQuiz];
+              copy[index].correctAnswer = Number(e.target.value);
+              setExistingQuiz(copy);
+            }}>
+              {[0, 1, 2, 3].map(opt => <option key={opt} value={opt}>Correct Option: {opt + 1}</option>)}
+            </select>
+            <button onClick={() => updateSingleQuiz(index)}>Save</button>
+          </>
+        ) : (
+          <>
+            <strong>{q.question}</strong>
+            <ul>
+              {q.options.map((opt, j) => (
+                <li key={j} className={j === q.correctAnswer ? "correct" : "incorrect"}>{opt}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        <div>
+          <button onClick={() => setEditingIndex(index)}>✏️ Edit</button>
+          <button className="delete" onClick={() => deleteSingleQuiz(index)}>🗑️ Delete</button>
+        </div>
       </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 };

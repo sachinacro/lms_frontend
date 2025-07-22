@@ -1,4 +1,62 @@
+// import axios from "axios";
+// import { createContext, useContext, useEffect, useState } from "react";
+// import { server } from "../main";
 
+// const CourseContext = createContext();
+
+// export const CourseContextProvider = ({ children }) => {
+//   const [courses, setCourses] = useState([]);
+//   const [course, setCourse] = useState(null);
+//   const [mycourse, setMyCourse] = useState([]);
+
+//   // ✅ Search-enabled version of fetchCourses
+//   const fetchCourses = async (searchTerm = "") => {
+//     try {
+//       const { data } = await axios.get(
+//         `${server}/api/course/all${searchTerm ? `?search=${searchTerm}` : ""}`
+//       );
+//       setCourses(data.courses);
+//     } catch (err) {
+//       console.error("Failed to fetch courses", err);
+//     }
+//   };
+
+//   const fetchMyCourse = async () => {
+//     try {
+//       const { data } = await axios.get(`${server}/api/mycourse`, {
+//         headers: {
+//           token: localStorage.getItem("token"),
+//         },
+//       });
+//       setMyCourse(data.courses);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     fetchCourses();
+//     if (localStorage.getItem("token")) {
+//       fetchMyCourse();
+//     }
+//   }, []);
+
+//   return (
+//     <CourseContext.Provider
+//       value={{
+//         courses,
+//         fetchCourses,
+//         course,
+//         mycourse,
+//         fetchMyCourse,
+//       }}
+//     >
+//       {children}
+//     </CourseContext.Provider>
+//   );
+// };
+
+// export const CourseData = () => useContext(CourseContext);
 
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";

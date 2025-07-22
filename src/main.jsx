@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import { UserContextProvider } from "./context/UserContext.jsx";
 import { CourseContextProvider } from "./context/CourseContext.jsx";
 
-export const server = import.meta.env.VITE_API_BASE_URL;
+export const server = "https://lms-backend-server-x81o.onrender.com/";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

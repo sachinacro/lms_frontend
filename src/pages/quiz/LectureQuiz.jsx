@@ -6,6 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { server } from "../../main";
 import toast from "react-hot-toast";
 import Loading from "../../components/loading/Loading";
+import "./LectureQuiz.css";
 
 const LectureQuiz = () => {
   const { id } = useParams(); // lecture ID

@@ -2,12 +2,9 @@
 import React from "react";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { server } from "../../main";
 
 const GoogleLoginButton = () => {
-  const navigate = useNavigate();
  const handleGoogleLogin = async () => {
   const provider = new GoogleAuthProvider();
   try {
@@ -17,7 +14,7 @@ const GoogleLoginButton = () => {
     const idToken = await user.getIdToken(); // 🟢 Get Firebase ID token
 
     // 🟢 Send token to your backend
-    const res = await fetch(`${server}/api/user/google-login`, {
+    const res = await fetch("http://localhost:5000/api/user/google-login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

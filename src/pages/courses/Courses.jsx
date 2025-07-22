@@ -52,3 +52,40 @@ const Courses = () => {
 
 export default Courses;
 
+
+
+{/* // import React, { useEffect, useState } from "react";
+// import "./courses.css";
+// import { CourseData } from "../../context/CourseContext";
+// import CourseCard from "../../components/coursecard/CourseCard";
+// import Loading from "../../components/loading/Loading";
+
+// const Courses = () => {
+//   const { courses, fetchCourses } = CourseData();
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     async function load() {
+//       await fetchCourses();
+//       setLoading(false);
+//     }
+//     load();
+//   }, []);
+
+//   if (loading) return <Loading />;
+
+//   return (
+//     <section className="courses">
+//       <h2>Available Courses</h2>
+//       <div className="course-container">
+//         {courses && courses.length > 0 ? (
+//           courses.map((course) => <CourseCard key={course._id} course={course} />)
+//         ) : (
+//           <p className="no-courses">No Courses Yet!</p>
+//         )}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Courses; */}

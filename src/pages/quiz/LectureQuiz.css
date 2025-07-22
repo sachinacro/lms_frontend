@@ -1,0 +1,62 @@
+/* LectureQuiz.css */
+
+.quiz-container {
+  padding: 30px;
+  color: #ffffff;
+  font-family: sans-serif;
+  background-color: #0f172a;
+  min-height: 100vh;
+}
+
+.quiz-question {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-question h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #e2e8f0;
+}
+
+.quiz-question label {
+  display: block;
+  background-color: #334155;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.quiz-question label:hover {
+  background-color: #475569;
+}
+
+.quiz-question input[type="radio"] {
+  margin-right: 10px;
+}
+
+.common-btn {
+  padding: 12px 25px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.common-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.common-btn:disabled {
+  background-color: #64748b;
+  cursor: not-allowed;
+}

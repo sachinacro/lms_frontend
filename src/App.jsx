@@ -82,13 +82,13 @@ const App = () => {
       ) : (
         <BrowserRouter>
           {/* Toggle button for dark mode */}
-          <IconButton
+          {/* <IconButton
             sx={{ position: "fixed", top: 10, right: 10, zIndex: 1300 }}
             onClick={toggleMode}
             color="inherit"
           >
             {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
-          </IconButton>
+          </IconButton> */}
 
           <Header isAuth={isAuth} />
           <Routes>

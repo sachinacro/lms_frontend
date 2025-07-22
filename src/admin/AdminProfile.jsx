@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { server } from "../main";
 import DashboardLayout from "./Utils/DashboardLayout"; // ✅ use admin layout with sidebar
-import "./AdminProfile.css";
+import "./adminProfile.css";
 
 const AdminProfile = () => {
   const [user, setUser] = useState(null);

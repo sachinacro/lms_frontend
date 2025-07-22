@@ -1,0 +1,94 @@
+/* AddQuiz.css */
+
+.add-quiz-container {
+  color: white;
+  padding: 30px;
+  font-family: sans-serif;
+}
+
+.quiz-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.quiz-form input,
+.quiz-form select {
+  padding: 10px;
+  border: 1px solid #444;
+  background: #1e1e2f;
+  color: white;
+  border-radius: 5px;
+  width: 150px;
+}
+
+.quiz-form button {
+  padding: 10px 15px;
+  border: none;
+  background: #0f62fe;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.quiz-form button:hover {
+  background: #0353e9;
+}
+
+.quiz-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.quiz-card {
+  background: #1c1c2c;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 280px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-card strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #e0e0e0;
+}
+
+.quiz-card ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.quiz-card li {
+  margin: 5px 0;
+}
+
+.quiz-card li.correct {
+  color: #00e676;
+}
+
+.quiz-card li.incorrect {
+  color: #ffffff;
+}
+
+.quiz-card button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.quiz-card button:hover {
+  text-decoration: underline;
+}
+
+.quiz-card button.delete {
+  color: #ff5252;
+}

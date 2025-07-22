@@ -50,3 +50,77 @@ const Header = ({ isAuth }) => {
 };
 
 export default Header;
+
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import "./header.css";
+
+// const Header = ({ isAuth }) => {
+//   return (
+//     <header className="glass-header">
+//       <div className="container header-container">
+//         <div className="logo">
+//           <Link to="/">
+//             <img
+//               src="logo4.png"
+//               alt="E-Learn Logo"
+//               style={{ height: "40px", width: "auto", margin: "0" }}
+//             />
+//           </Link>
+//         </div>
+
+//         <nav className="nav-links">
+//           <Link to="/">Home</Link>
+//           <Link to="/courses">Courses</Link>
+//           <Link to="/about">About</Link>
+//           {isAuth ? (
+//             <Link to="/account">Account</Link>
+//           ) : (
+//             <Link to="/login">Login</Link>
+//           )}
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+
+
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import "./header.css";
+
+// const Header = ({ isAuth }) => {
+//   return (
+//     <header className="glass-header">
+//       <div className="container header-container">
+//         <div className="logo">
+//           <Link to="/">
+//             <img
+//               src="logo4.png"
+//               alt="E-Learn Logo"
+//               style={{ height: "40px", width: "auto", margin: "0" }}
+//             />
+//           </Link>
+//         </div>
+
+//         <nav className="nav-links">
+//           <Link to="/">Home</Link>
+//           <Link to="/courses">Courses</Link>
+//           <Link to="/about">About</Link>
+//           {isAuth ? (
+//             <Link to="/account">Account</Link>
+//           ) : (
+//             <Link to="/login">Login</Link>
+//           )}
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Header;
