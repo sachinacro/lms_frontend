@@ -4,7 +4,7 @@ import axios from "axios";
 import { server } from "../../../main";
 import { UserData } from "../../../context/UserContext";
 import { FiX } from "react-icons/fi";
-import "./sidebar.css";
+import "./Sidebar.css";
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
   const location = useLocation();
