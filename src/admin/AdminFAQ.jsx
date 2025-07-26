@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 // import DashboardLayout from "./Utils/DashboardLayout"; // if you're using a layout with sidebar
 import "./faq.css";
+import { server } from "../main";
 
 const AdminFAQ = () => {
   const [question, setQuestion] = useState("");
@@ -18,7 +19,7 @@ const AdminFAQ = () => {
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_SERVER_URL || "https://lms-backend-server-x81o.onrender.com"}/api/ask-ai`,
+        `${server || "https://lms-backend-server-x81o.onrender.com"}/api/ask-ai`,
         { question },
         {
           headers: {
