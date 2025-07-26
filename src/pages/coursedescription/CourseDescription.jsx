@@ -137,11 +137,14 @@ const CourseDescription = ({ user }) => {
           {course && (
             <div className="course-description">
               <div className="course-header">
-                <img
-                  src={`${server}/${course.image}`}
-                  alt=""
-                  className="course-image"
-                />
+               <img
+  src={
+    course?.image?.url
+      ? course.image.url  // ✅ Correct Cloudinary URL
+      : "https://cdn-icons-png.flaticon.com/512/219/219986.png"
+  }
+  alt={course.title}
+/>
                 <div className="course-info">
                   <h2>{course.title}</h2>
                   <p>Instructor: {course.createdBy}</p>
