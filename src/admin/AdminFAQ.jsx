@@ -18,7 +18,7 @@ const AdminFAQ = () => {
 
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_SERVER_URL || "http://localhost:5000"}/api/ask-ai`,
+        `${import.meta.env.VITE_SERVER_URL || "https://lms-backend-server-x81o.onrender.com"}/api/ask-ai`,
         { question },
         {
           headers: {
